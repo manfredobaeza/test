@@ -92,7 +92,7 @@ int stringprocess(NumStack *ns, CharStack *cs, char s[]){//处理字符串
     char ch1[MAX_SIZE] = ""; //存储当前的字符串
 
     for(int i = 0; s[i] != '\0'; i++){
-        if(isdigit(s[i])){//如果s[i]是数字，先构造数字，然后将数字入栈
+        if(isdigit(s[i])){//如果s[i]是数字，构造数字
             num1 = num1 * 10 + (s[i] - '0');
         }
         else if(s[i] == '['){
@@ -101,7 +101,7 @@ int stringprocess(NumStack *ns, CharStack *cs, char s[]){//处理字符串
             num1 = 0;//重置
             ch1[0] = '\0';
         }
-        else if(isalpha(s[i])){ //如果s[i]是字母，将字母入栈
+        else if(isalpha(s[i])){ //如果s[i]是字母，将字母保存到ch1中
             int len = strlen(ch1);
             ch1[len] = s[i];
             ch1[len + 1] = '\0';
